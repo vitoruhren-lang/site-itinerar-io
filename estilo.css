@@ -37,7 +37,7 @@ nav a:hover {
 
 /* Container principal */
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 30px auto;
     padding: 0 20px;
 }
@@ -56,25 +56,27 @@ nav a:hover {
 }
 
 /* =================================================== */
-/* NOVO CÓDIGO DAS COLUNAS (CSS GRID)                  */
+/* ESTRUTURA DAS COLUNAS (2 TÓPICOS POR LINHA)         */
 /* =================================================== */
 .grid-colunas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* FORÇA exatamente 2 colunas iguais */
-    gap: 20px;                             /* Espaço entre as colunas */
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important; /* Cria exatamente 2 colunas lado a lado */
+    gap: 25px !important;                      /* Espaço entre os cartões */
+    width: 100%;
 }
 
 .card {
     background-color: rgba(255, 255, 255, 0.25);
     padding: 25px;
     border-radius: 10px;
-    margin-bottom: 0; /* O gap do grid já cuida do espaçamento */
+    box-sizing: border-box;
+    margin: 0 !important;
 }
 
-/* No telemóvel/celular, muda automaticamente para 1 coluna */
+/* No celular, vira 1 coluna para não espremer o texto */
 @media (max-width: 768px) {
     .grid-colunas {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 /* =================================================== */
