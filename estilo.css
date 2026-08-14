@@ -35,14 +35,14 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Container principal (mais largo para caber as 2 colunas) */
+/* Container principal */
 .container {
     max-width: 1000px;
     margin: 30px auto;
     padding: 0 20px;
 }
 
-/* Estilos para a Imagem */
+/* Imagem */
 .container-imagem {
     text-align: center;
     margin-bottom: 30px;
@@ -55,28 +55,29 @@ nav a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
 }
 
-/* --- ESTRUTURA EM 2 COLUNAS --- */
+/* =================================================== */
+/* NOVO CÓDIGO DAS COLUNAS (CSS GRID)                  */
+/* =================================================== */
 .grid-colunas {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espaço entre as colunas */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* FORÇA exatamente 2 colunas iguais */
+    gap: 20px;                             /* Espaço entre as colunas */
 }
 
-/* Cada card ocupa quase 50% do espaço (uma coluna ao lado da outra) */
 .card {
     background-color: rgba(255, 255, 255, 0.25);
     padding: 25px;
     border-radius: 10px;
-    box-sizing: border-box;
-    width: calc(50% - 10px); /* Garante exatamente 2 colunas */
+    margin-bottom: 0; /* O gap do grid já cuida do espaçamento */
 }
 
-/* Ajuste automático para celulares (1 coluna em telas pequenas) */
+/* No telemóvel/celular, muda automaticamente para 1 coluna */
 @media (max-width: 768px) {
-    .card {
-        width: 100%;
+    .grid-colunas {
+        grid-template-columns: 1fr;
     }
 }
+/* =================================================== */
 
 .card h2 {
     margin-top: 0;
