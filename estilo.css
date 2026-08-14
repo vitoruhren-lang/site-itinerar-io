@@ -1,4 +1,4 @@
-/* Configurações gerais da página */
+/* Estilos Gerais */
 body {
     background-color: #1e88e5; /* Fundo azul */
     color: #000000;            /* Letras pretas */
@@ -9,21 +9,25 @@ body {
 
 /* Cabeçalho */
 header {
-    background-color: #1565c0; /* Azul ligeiramente mais escuro para destaque */
+    background-color: #1565c0;
     padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    margin: 0 0 10px 0;
+header h1, header p {
     color: #000000;
+    margin: 5px 0;
 }
 
 /* Menu de navegação */
+nav {
+    margin-top: 15px;
+}
+
 nav a {
     color: #000000;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     font-weight: bold;
 }
 
@@ -31,21 +35,69 @@ nav a:hover {
     text-decoration: underline;
 }
 
-/* Organização do conteúdo principal */
+/* Container principal (mais largo para caber as 2 colunas) */
 .container {
-    max-width: 800px;
-    margin: 40px auto;
+    max-width: 1000px;
+    margin: 30px auto;
     padding: 0 20px;
 }
 
-/* Caixa de conteúdo central para organizar as informações */
-.card {
-    background-color: rgba(255, 255, 255, 0.2); /* Fundo levemente transparente para destacar o texto */
-    padding: 20px;
-    border-radius: 8px;
+/* Estilos para a Imagem */
+.container-imagem {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.card h2, .card p {
+.imagem-site {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* --- ESTRUTURA EM 2 COLUNAS --- */
+.grid-colunas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espaço entre as colunas */
+}
+
+/* Cada card ocupa quase 50% do espaço (uma coluna ao lado da outra) */
+.card {
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 25px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    width: calc(50% - 10px); /* Garante exatamente 2 colunas */
+}
+
+/* Ajuste automático para celulares (1 coluna em telas pequenas) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+    }
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #000000;
+}
+
+.subtitulo {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #000000;
+}
+
+/* Listas */
+.card ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.card li {
+    margin-bottom: 12px;
+    line-height: 1.5;
     color: #000000;
 }
 
@@ -54,4 +106,5 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+    color: #000000;
 }
